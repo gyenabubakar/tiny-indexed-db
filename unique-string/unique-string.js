@@ -67,6 +67,5 @@ var UniqueString = /** @class */ (function () {
     };
     return UniqueString;
 })();
-var id = new UniqueString();
-console.log(id.generate());
+
 exports["default"] = UniqueString;
