@@ -9,7 +9,7 @@ The additional `unique-string.js` library is used to generate unique strings, wh
 To use it, make sure to import `UniqueString` from the `unique-string.js` file:
 
 ```
-import UniqueString from `'<your-path>/unique-string`;
+import UniqueString from '<your-path>/unique-string' ;
 ```
 
 To generate a unique string, create a new instance of the `UniqueString` class:
