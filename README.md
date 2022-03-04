@@ -8,19 +8,19 @@ The additional `unique-string.js` library is used to generate unique strings, wh
 
 To use it, make sure to import `UniqueString` from the `unique-string.js` file:
 
-```
+```js
 import UniqueString from '<your-path>/unique-string' ;
 ```
 
 To generate a unique string, create a new instance of the `UniqueString` class:
 
-```
+```js
 const uid = new UniqueString();
 ```
 
 Then, use the `generate()` method on the new instance. The method will return a string with randomly generated numbers, special characters and alphabets:
 
-```
+```js
 let idString = uid.generate();
 ```
 
@@ -30,7 +30,7 @@ let idString = uid.generate();
 
 To use this, import `DB` from `tiny-idb.js` file:
 
-```
+```js
 import DB from '<your-path>/tiny-idb';
 ```
 
@@ -40,7 +40,7 @@ import DB from '<your-path>/tiny-idb';
 
 ### Syntax:
 
-```
+```js
 DB.createDB(name, version, [, stores]);
 ```
 
@@ -51,7 +51,7 @@ DB.createDB(name, version, [, stores]);
 
 ### Example
 
-```
+```js
 const db = DB.createDB('NamesDatabase', 1, [
     {
         name: 'namesStore', // name of object store
@@ -83,7 +83,7 @@ The `DB.openDB()` method is for opening an already created `indexedDB` database:
 
 ### Syntax
 
-```
+```js
 DB.openDB(name, version);
 ```
 
@@ -93,7 +93,7 @@ DB.openDB(name, version);
 
 ### Example
 
-```
+```js
 (async () => {
     // open the database
     const db = await DB.openDB('NamesDatabase', 1);
@@ -109,7 +109,7 @@ To open transaction on a database, use the `DB.transaction()` method.
 
 ## Syntax
 
-```
+```js
 DB.transaction(dbObject, stores, mode);
 ```
 
@@ -119,7 +119,7 @@ DB.transaction(dbObject, stores, mode);
 -   `DB.transaction()` returns an object with a `tx` property: the IDBTransaction object; and a `getStore()` method.
 -   the `getStore()` method accepts one argument, the name of the store you want to open on the transaction, and returns a promise with the IDBOBjectStore object:
 
-```
+```js
 // borrowing the IIFE from the earlier example
 (async () => {
     const db = await DB.openDB('NamesDatabase', 1);
@@ -140,7 +140,7 @@ To query the database and get one specific object in an object store, use `DB.ge
 
 ### Syntax
 
-```
+```js
 DB.getObjectData(store, objectKeyPath);
 ```
 
@@ -150,8 +150,7 @@ DB.getObjectData(store, objectKeyPath);
 
 ### Example
 
-```
-// borrowing the IIFE from the earlier example
+```js
 (async () => {
     const db = await DB.openDB('NamesDatabase', 1);
 
@@ -171,7 +170,7 @@ This `DB.getAllObjectData()` method is similar to the `DB.getObjectData()` metho
 
 ### Syntax
 
-```
+```js
 DB.getAllObjectData(store);
 ```
 
@@ -180,8 +179,7 @@ DB.getAllObjectData(store);
 
 ### Example
 
-```
-// borrowing the IIFE from the earlier example
+```js
 (async () => {
     const db = await DB.openDB('NamesDatabase', 1);
 
@@ -201,7 +199,7 @@ The `DB.addObjectData()` is used to achieve this.
 
 ### Syntax
 
-```
+```js
 DB.addObjectData(store, dataBody);
 ```
 
@@ -213,8 +211,7 @@ DB.addObjectData(store, dataBody);
 
 ### Example
 
-```
-// borrowing the IIFE from the earlier example
+```js
 (async () => {
     const db = await DB.openDB('NamesDatabase', 1);
 
@@ -237,7 +234,7 @@ To do this, use the `DB.updateObjectData()` method.
 
 ### Syntax
 
-```
+```js
 DB.updateObjectData(store, keyPath, key, newData);
 ```
 
@@ -249,8 +246,7 @@ DB.updateObjectData(store, keyPath, key, newData);
 
 ### Example
 
-```
-// borrowing the IIFE from the earlier example
+```js
 (async () => {
     const db = await DB.openDB('NamesDatabase', 1);
 
@@ -273,7 +269,7 @@ To achieve this, use the `DB.deleteObjectData()` method.
 
 ### Syntax
 
-```
+```js
 DB.deleteObjectData(store, dataKey);
 ```
 
@@ -286,8 +282,7 @@ DB.deleteObjectData(store, dataKey);
 
 ### Example
 
-```
-// borrowing the IIFE from the earlier example
+```js
 (async () => {
     const db = await DB.openDB('NamesDatabase', 1);
 
