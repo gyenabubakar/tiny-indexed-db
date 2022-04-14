@@ -100,7 +100,7 @@ DB.openDB(name, version);
 
     // do something with db
     ...
-});
+})();
 ```
 
 ### Opening a transaction
@@ -131,7 +131,7 @@ DB.transaction(dbObject, stores, mode);
 
     // or, you could just get the transaction object back
     const tx = await DB.transaction(db, ['nameStore'], 'readonly').tx;
-});
+})();
 ```
 
 ## Reading one object from an object store
@@ -161,7 +161,7 @@ DB.getObjectData(store, objectKeyPath);
 
     // get from the nameStore object store, the object with nameID of someID1
     const firstName = await DB.getObjectData(nameStore, 'someID1');
-});
+})();
 ```
 
 ## Reading all objects in an object store
@@ -190,7 +190,7 @@ DB.getAllObjectData(store);
 
     // get from the nameStore object store, all the available objects
     const allNames = await DB.getAllObjectData(nameStore);
-});
+})();
 ```
 
 ## Adding an object in a database
@@ -225,7 +225,7 @@ DB.addObjectData(store, dataBody);
         nameID: 'someID3', // here, you can generate a unique key with the `unique-string` library
         body: 'Some Name'
     });
-});
+})();
 ```
 
 ## Updating a specific object in an object store
@@ -260,7 +260,7 @@ DB.updateObjectData(store, keyPath, key, newData);
         nameID: 'someID1',
         body: 'John Doe Snr.'
     });
-});
+})();
 ```
 
 ## Deleting objects from an object store
@@ -293,7 +293,7 @@ DB.deleteObjectData(store, dataKey);
 
     // in the the namesStore object store, delete an object whose nameID === 'someID2'
     const [deletedObj, remainingObj] = await DB.deleteObjectData(namesStore, 'someID2');
-});
+})();
 ```
 
 _These are all the commands that `tiny-idb.js` can perform, at this moment._
